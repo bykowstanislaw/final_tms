@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans&display=swap');
+
+.sweet__list{
+    width: 910px;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 400px;
+}
+.element__image{
+    width: 291px;
+    height: 230px;
+}
+.element__tittle{
+    font-size: 24px;
+    letter-spacing: 1px;
+    color:#70544f;;
+    font-weight: bold;
+    font-family: 'Arvo', serif;
+    font-weight:700;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.element__structure{
+    color:#a69895;
+    font-weight: normal;
+    font-family: 'Arvo', serif;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    height: 85px;
+    
+}
+
+.list__element{width: 291px;
+    margin: 5px;
+    background-color: white;}
+
+.taker{
+    width: 170px;
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-between;
+    color:#a69895;
+    font-weight: normal;
+    font-family: 'Arvo', serif;
+}
+
+.o{
+    border-radius: 12px;
+    padding: 5px;
+    border: #a69895 1px solid;
+    cursor: pointer;
+}
+.d{
+    border-radius: 12px;
+    padding: 5px;
+    border: #a69895 1px solid;
+    cursor: pointer;
+}
+.element__button{
+    margin-top: 50px;
+    height: 48px;
+    padding: 15px 25px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 24px;
+    background-color: #009471;
+    border: none;
+    color: #fff;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-bottom: 10px;}
+
+
+.df{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+  .element__price{
+    color: #70544f;
+    font-size: 16px;
+    font-family: 'Arvo', serif;
+    font-weight: 500;
+    margin-right: 50px;
+    margin-top: 66px;
+
+  }
+  span{
+    color: #70544f;
+    font-size: 18px;
+    font-family: 'Arvo', serif;
+    font-weight: 400;
+    padding-left: 10px
+  }

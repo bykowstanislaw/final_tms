@@ -1,0 +1,74 @@
+.cart{
+    flex-grow: 1;
+    justify-content: center;
+    margin-left: 505px;
+}
+.cart__container{
+    display: flex;
+    height: 100px;
+    width: 700px;
+    background-color: white;
+    margin: 10px;
+    margin-top: 20px;
+}
+.container__name{
+    font-size: 24px;
+    letter-spacing: 1px;
+    color:#70544f;;
+    font-weight: bold;
+    font-family: 'Arvo', serif;
+    font-weight:700;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.container__structure{
+    width: 300px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color:#70544f;;
+    font-family: 'Arvo', serif;
+    font-weight:400;
+    padding-left: 20px;
+
+}
+.container__quantity{
+    display: flex;
+    padding-left: 30px;
+    padding-right: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color:#70544f;;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    margin-top: 35px;
+}
+.container__number{
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.container__incr, .container__decr>button{
+    background-color: white;
+    border: none;
+    font-size:12px;
+
+    font-family: 'Arvo', serif;
+    border: 1px black solid;
+    border-radius: 50%;
+}
+.container__incr, .container__decr>button:hover{
+    cursor: pointer;
+    
+}
+.container__price{
+    width: 300px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color:#70544f;;
+    font-family: 'Arvo', serif;
+    font-weight:400;
+    padding-left: 20px;
+    margin-top: 35px;
+    margin-left: 15px;
+}
