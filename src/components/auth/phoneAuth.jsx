@@ -1,6 +1,12 @@
 import firebase from "../services/firebase";
 import "firebase/auth";
 import React, { useState } from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink
+} from "react-router-dom";
 
 export const PhoneSignIn = ({setIsLoggedIn,setCurrentUser}) => {
     
@@ -64,6 +70,10 @@ export const PhoneSignIn = ({setIsLoggedIn,setCurrentUser}) => {
             setIsLoggedIn(false)
         }
     }
+    const handleGuest = () =>{
+        setIsLoggedIn(true)
+
+    }
 
 
     return (
@@ -72,7 +82,10 @@ export const PhoneSignIn = ({setIsLoggedIn,setCurrentUser}) => {
             <input type='button' value='Sign in' onClick={SignInSubmit} />
             <div id="recaptcha-container" className="recaptcha-container"></div>
             <input onChange={setUpConfirmCode}></input>
-            <button onClick={handleValidateCode}>let's go</button>
+            <NavLink to='/pizza'><button onClick={handleValidateCode}>let's go</button></NavLink>
+
+
+            <NavLink to='/pizza'> <div><button onClick={handleGuest}>Войти как гость</button></div></NavLink>
         </>
     )
     }

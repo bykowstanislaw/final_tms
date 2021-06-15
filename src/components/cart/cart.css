@@ -70,5 +70,35 @@
     font-weight:400;
     padding-left: 20px;
     margin-top: 35px;
-    margin-left: 15px;
+    margin-left: 5px;
 }
+.cart__remove{
+    border: none;
+    background-color:white;
+    font-size: 18px;
+    color: grey;
+}
+.cart__remove{cursor: pointer;}
+.container__button{
+    margin-top: 10px;
+    height: 48px;
+    padding: 15px 25px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 24px;
+    background-color: #009471;
+    border: none;
+    color: #fff;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 1030px;
+    margin-bottom: 10px;
+    
+}
+.xd{background-color: none;
+    margin-left: 750px;
+    margin-top: 290px;}

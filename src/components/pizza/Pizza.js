@@ -37,7 +37,6 @@ const Pizza = ({ sort, handleSortUp, handleSortDown, handleSortDefault, currentU
                 .get()
 
             setDataPizza(docs.map(doc => ({ ...doc.data() })))
-            console.log(dataPizza)
         } catch (e) {
             console.error(e)
         }
@@ -49,7 +48,7 @@ const Pizza = ({ sort, handleSortUp, handleSortDown, handleSortDefault, currentU
                 inCart: firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
 
             })
-            console.log(currentUser)
+        
         }
         catch (e) {
             console.error(e)
