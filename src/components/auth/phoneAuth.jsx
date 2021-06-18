@@ -1,5 +1,6 @@
 import firebase from "../services/firebase";
 import "firebase/auth";
+import './auth.css'
 import React, { useState } from 'react'
 import {
     BrowserRouter as Router,
@@ -10,7 +11,7 @@ import {
 
 export const PhoneSignIn = ({setIsLoggedIn,setCurrentUser}) => {
     
-    const [phone, setPhone] = React.useState('+375441111111');
+    const [phone, setPhone] = React.useState('');
     const [codeInput,setCode]=React.useState('')
     const [confirmationResult,setConfirmationResult]=React.useState(null)
     const setUpRecaptcha = () => {
@@ -78,14 +79,18 @@ export const PhoneSignIn = ({setIsLoggedIn,setCurrentUser}) => {
 
     return (
         <>
-            <input value={phone} onChange={e => setPhone(e.target.value)} />
-            <input type='button' value='Sign in' onClick={SignInSubmit} />
+            <div className="auth__number">
+            <div className="element__tittle">Авторизация по номеру телефона</div>
+            <input value={phone} placeholder='Введите ваш номер' onChange={e => setPhone(e.target.value)} className='auth__input'/>
+            <button onClick={SignInSubmit} className="sliding-button" >Отправить код</button>
+          
             <div id="recaptcha-container" className="recaptcha-container"></div>
-            <input onChange={setUpConfirmCode}></input>
-            <NavLink to='/pizza'><button onClick={handleValidateCode}>let's go</button></NavLink>
+            <input onChange={setUpConfirmCode} placeholder='Введите код подтверждения' className="auth__input"></input>
+            <NavLink to='/pizza'><button onClick={handleValidateCode} className="sliding-button">Подтвердить</button></NavLink>
 
-
-            <NavLink to='/pizza'> <div><button onClick={handleGuest}>Войти как гость</button></div></NavLink>
+            <div className="element__tittle1">или же</div>
+            <NavLink to='/pizza'> <div><button onClick={handleGuest} className="sliding-button1">Войти как гость</button></div></NavLink>
+            </div>
         </>
     )
     }

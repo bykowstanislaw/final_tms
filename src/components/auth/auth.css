@@ -1,0 +1,130 @@
+.auth__input{
+
+        margin:40px;
+        box-sizing: border-box;
+      
+        display:block;
+        
+        margin:10px 0;
+        padding:10px;
+      
+      
+        border-radius:10px;
+        border: 1px solid #eee;
+        transition: .3s;
+        border: 1px solid #aaa;
+        width: 300px;
+        align-items: center;
+        margin-left: 15px;
+        margin-top: 15px;
+        
+      
+}
+
+.auth__number{
+    border: 1px black solid;
+    padding: 15px;
+    width: 20%;
+    height: 500px;
+    margin-left: 670px;
+    align-items: center;
+    margin-top: 150px;
+    border-radius: 12px;
+
+}
+.sliding-button {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 1px solid;
+    background-color: red;
+    border-image-slice: 1;
+    margin-left:15px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+    border-radius: 10px;
+  }
+  .sliding-button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+  }
+  .sliding-button:hover {
+    background: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+  .sliding-button:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+  }
+  .element__tittle{
+      font-size: 20px;
+      
+  }
+
+  .element__tittle1{
+      font-size: 20px;
+        margin-top: 10px;
+        
+    letter-spacing: 1px;
+    color:#70544f;;
+    font-weight: bold;
+    font-family: 'Arvo', serif;
+    font-weight:700;
+    padding-top: 20px;
+    padding-left: 20px;
+      
+  }
+  .sliding-button1 {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 1px solid;
+    background-color: lightgreen;
+    border-image-slice: 1;
+    margin-left:15px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+    border-radius: 10px;
+  }
+  .sliding-button1:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(180deg, lightgreen, green, green, lightgreen);
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+  }
+  .sliding-button1:hover {
+    background: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+  .sliding-button1:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+  }

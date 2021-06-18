@@ -47,6 +47,7 @@ const Menu = () => {
     const [currentUser, setCurrentUser]=useState('bykow')
     const [sort, setSort] = useState('умолчанию')
     const [menu,setMenu]=useState('')
+    const [quantity,setQuantity]=useState('')
     
     const handleChangeSortMethod = (e) => {
         setSort(e.target.value)
@@ -72,6 +73,7 @@ const Menu = () => {
     return (
         <>
         <div>
+            
         {(!isLoggedIn) ? <Route path="/" ><PhoneSignIn key={1222} setIsLoggedIn={setIsLoggedIn} setCurrentUser={setCurrentUser}/></Route> :
             <div>
                 <div className="menu">
@@ -91,12 +93,13 @@ const Menu = () => {
                             })}
                         </select>
                         <NavLink key={1231}  onClick={handleMenu} exact to='/cart' className="settings__cart"><img src="/images/cart.png" className="cart__picture" /></NavLink>
+                        <div>{quantity}</div>
                     </div>
                 </div>
                 {(loading) ?<div className="loader"></div> :
                 <div className="df">
                     <div>
-                        <Container key={333333} sort={sort} currentUser={currentUser} />
+                        <Container key={333333} sort={sort} currentUser={currentUser} setQuantity={setQuantity}/>
                     </div>
                 </div>}
             </div>

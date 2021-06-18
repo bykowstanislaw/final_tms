@@ -6,7 +6,6 @@ const Soup = ({currentUser}) =>{
     const [dataSoup,setDataSoup]=useState([])
     const [targetSoupId,setTargetSoupId]=useState([])
 
-
     const takeSoupId=(e)=>{
         setTargetSoupId(e.target.id)
         console.log(targetSoupId)
@@ -41,12 +40,6 @@ const Soup = ({currentUser}) =>{
         handleAddSoupToCart()
     },[targetSoupId])
    
-        
-  
-
-    
-
-
     return(
         <>
         

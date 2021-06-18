@@ -109,5 +109,4 @@ const Pizza = ({ sort, handleSortUp, handleSortDown, handleSortDefault, currentU
     )
 }
 
-
 export default Pizza

@@ -12,7 +12,7 @@ import {
 import Slider from "../components/slider/Slider";
 import Cart from "../components/cart/cart";
 
-const Container = ({ sort,currentUser ,setLoading}) => {
+const Container = ({ sort,currentUser ,setLoading, setQuantity}) => {
 
 
 
@@ -33,7 +33,7 @@ const Container = ({ sort,currentUser ,setLoading}) => {
       <Switch>
       
          {/* <Route path='/' exact> <Pizza sort={sort} handleSortUp={handleSortUp} handleSortDown={handleSortDown} handleSortDefault={handleSortDefault} currentUser={currentUser} key={99} /></Route> */}
-          <Route  path='/pizza'> <Pizza sort={sort} handleSortUp={handleSortUp} handleSortDown={handleSortDown} handleSortDefault={handleSortDefault} key={100} currentUser={currentUser}/></Route>
+          <Route exact path='/pizza'> <Pizza sort={sort} handleSortUp={handleSortUp} handleSortDown={handleSortDown} handleSortDefault={handleSortDefault} key={100} currentUser={currentUser}/></Route>
         
          <Route path='/snacks'> <Snacks currentUser={currentUser} key={101} /></Route>
          <Route path='/soup'> <Soup currentUser={currentUser} key={102}/></Route>
@@ -43,7 +43,7 @@ const Container = ({ sort,currentUser ,setLoading}) => {
 
       <Route path='/sweet'> <Sweet currentUser={currentUser} key={104} /></Route>
 
-      <Route  path='/cart'><Cart key={105} currentUser={currentUser} /></Route>
+      <Route  path='/cart'><Cart key={105} currentUser={currentUser} setQuantity={setQuantity}  /></Route>
 
       {/* <Route path='/sweet' render={() => 123123} /> */}
 
