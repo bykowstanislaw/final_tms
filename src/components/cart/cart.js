@@ -103,7 +103,7 @@ const Cart = ({ currentUser }) => {
             arr.map((el) => {
                return  (<div className='cart'>
                   <div className='cart__container'>
-                     <div className="container__image"><img src={el.pic} width='100px' height='100px'></img></div>
+                     <div className="container__image"><img src={el.pic} width='100px' height='100px' alt=' not found'></img></div>
                      <div>
                         <div className="container__name">{el.name}</div>
                         <div className="container__structure">{el.structure}</div>
@@ -126,10 +126,10 @@ const Cart = ({ currentUser }) => {
    useEffect(()=>{
       
       setOrder([...dattaPizza,...snackData,...soupData,...sweetData,...sauceData,...drinkData])
-      console.log(order)
+      
 
       
-    },[dattaPizza,snackData,soupData,sweetData,sauceData,drinkData])
+    },[dattaPizza,snackData,soupData,sweetData,sauceData,drinkData,])
 
    useEffect(() => {
       getPizza()

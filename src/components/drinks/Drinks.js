@@ -28,24 +28,25 @@ const Drinks =({currentUser})=>{
             console.error(e)
         } 
     }
-    const handleAddDrinkToCart = async() =>{
-        try {
-            await firebase.firestore().collection('drinks').doc(targetDrinkId).update({
-                inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
-            })
-        }
-        catch(e){
-            console.log(e)
-        }
-    }
+   
     useEffect(()=>{
+        const handleAddDrinkToCart = async() =>{
+            try {
+                await firebase.firestore().collection('drinks').doc(targetDrinkId).update({
+                    inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
+                })
+            }
+            catch(e){
+                console.log(e)
+            }
+        }
         handleAddDrinkToCart()
-    },[targetDrinkId])
+    },[targetDrinkId,currentUser])
    
     return(<>
         <div className="drinks__list">
                {dataDrinks.map((el,i)=>{
-                   return (<div className="list__element" ><img src={el.pic} width='290px' height='230px' alt="image not found"/>
+                   return (<div className="list__element" ><img src={el.pic} width='290px' height='230px' alt="not found"/>
                    <div className="element__tittle" key={i}>{el.name}</div>
                    {/* <div className="element__structure" key={i}>{el.structure}</div> */}
                    

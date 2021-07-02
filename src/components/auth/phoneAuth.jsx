@@ -1,11 +1,8 @@
 import firebase from "../services/firebase";
 import "firebase/auth";
 import './auth.css'
-import React, { useState } from 'react'
+import React from 'react'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     NavLink
 } from "react-router-dom";
 

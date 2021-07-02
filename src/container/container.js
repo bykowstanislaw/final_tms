@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Soup from '../components/soup/Soup'
 import Pizza from '../components/pizza/Pizza'
 import Snacks from "../components/snacks/Snacks";
@@ -9,7 +9,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Slider from "../components/slider/Slider";
+
 import Cart from "../components/cart/cart";
 
 const Container = ({ sort,currentUser ,setLoading, setQuantity}) => {

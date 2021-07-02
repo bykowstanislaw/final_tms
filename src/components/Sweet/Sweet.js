@@ -25,25 +25,26 @@ const Sweet =({currentUser})=>{
             console.error(e)
         } 
     }
-    const handleAddSweetToCart = async() =>{
-        try {
-            await firebase.firestore().collection('sweets').doc(targetSweetId).update({
-                inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
-            })
-        }
-        catch(e){
-            console.log(e)
-        }
-    }
+    
     useEffect(()=>{
+        const handleAddSweetToCart = async() =>{
+            try {
+                await firebase.firestore().collection('sweets').doc(targetSweetId).update({
+                    inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
+                })
+            }
+            catch(e){
+                console.log(e)
+            }
+        }
         handleAddSweetToCart()
-    },[targetSweetId])
+    },[targetSweetId,currentUser])
     
 
     return(<>
         <div className="sweet__list">
                {dataSweet.map((el,i)=>{
-                   return (<div className="list__element" key={i}><img src={el.pic} width='290px' height='230px' alt="image not found"/>
+                   return (<div className="list__element" key={i}> <img src={el.pic} width='290px' height='230px' alt="not found"/>
                    <div className="element__tittle" key={i}>{el.name}</div>
                    {/* <div className="element__structure" key={i}>{el.structure}</div> */}
                    

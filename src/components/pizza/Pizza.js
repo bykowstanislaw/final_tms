@@ -9,7 +9,7 @@ const Pizza = ({ sort, handleSortUp, handleSortDown, handleSortDefault, currentU
     const [dataPizza, setDataPizza] = useState([])
     const [filterType, dispatch] = useReducer(reducerFilter, 'все')
     const [targetId, setTargetId] = useState([])
-    const [currentUserUid, setCurrentUserUid] = useState()
+    
 
     function handleSort() {
         if (sort === "возрастанию") {
@@ -42,7 +42,11 @@ const Pizza = ({ sort, handleSortUp, handleSortDown, handleSortDefault, currentU
         }
     }
 
-    const handleAddPizzaToCart = async () => {
+  
+    handleSort()
+
+    useEffect(() => {
+          const handleAddPizzaToCart = async () => {
         try {
             await firebase.firestore().collection("pizza").doc(targetId).update({
                 inCart: firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
@@ -55,10 +59,7 @@ const Pizza = ({ sort, handleSortUp, handleSortDown, handleSortDefault, currentU
 
         }
     }
-    handleSort()
-
-    useEffect(() => {
-        handleAddPizzaToCart()
+    handleAddPizzaToCart()
     }, [targetId])
 
     useEffect(() => {
@@ -74,7 +75,7 @@ const Pizza = ({ sort, handleSortUp, handleSortDown, handleSortDefault, currentU
             </div>
             <div className="pizza__list">
                 {dataPizza.map((el) => {
-                    const text = (<div className="list__element"><img src={el.pic} width='290px' height='230px' alt="image not found" />
+                    const text = (<div className="list__element"><img src={el.pic} alt='not found' width='290px' height='230px'  />
                         <div className="element__tittle">{el.name}</div>
                         <div className="element__structure">{el.structure}</div>
                         <div className='df'><button className='element__button' id={el.id} onClick={takeId}  >В корзину</button> <div className="element__price">{el.price} BYN</div></div>

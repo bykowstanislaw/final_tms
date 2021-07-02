@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import CartContainer from '../cart/cart'
 import './snacks.css'
 import firebase from 'firebase'
 
@@ -34,19 +33,20 @@ const Snacks = ({currentUser}) =>{
         } 
     }
     
-    const addSnackToCart =async()=>{
-        try{
-            await firebase.firestore().collection('snacks').doc(snackId).update({
-                inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
-            })
-        }
-        catch(e){
-            console.error(e)
-        }
-    }
+
     useEffect(()=>{
+        const addSnackToCart =async()=>{
+            try{
+                await firebase.firestore().collection('snacks').doc(snackId).update({
+                    inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
+                })
+            }
+            catch(e){
+                console.error(e)
+            }
+        }
         addSnackToCart()
-    },[snackId])
+    },[snackId,currentUser])
 
 
     
@@ -54,7 +54,7 @@ const Snacks = ({currentUser}) =>{
     return(<>
      <div className="snacks__list">
             {snackConst.map((el,i)=>{
-                return (<div className="list__element" ><img src={el.pic} width='290px' height='230px' alt="image not found"/>
+                return (<div className="list__element" ><img src={el.pic} width='290px' height='230px' alt="not found"/>
                 <div className="element__tittle" >{el.name}</div>
                 <div className="element__structure" >{el.structure}</div>
                 

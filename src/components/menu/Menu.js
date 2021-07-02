@@ -1,11 +1,9 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../../container/container'
 import "./menu.css"
 import './reducer'
-import reducer from './reducer'
+
 import {
-    BrowserRouter as Router,
-    Switch,
     Route,
     NavLink
 } from "react-router-dom";
@@ -78,7 +76,7 @@ const Menu = () => {
             <div>
                 <div className="menu">
                     <div className="menu__image">
-                        <img src="/images/zaebalo.png" className='image__logo' alt="image not found" />
+                        <img src="/images/zaebalo.png" className='image__logo' alt="not found" />
                     </div>
                     <div className="menu__main">
                         {menuItem.map((item,i) => {
@@ -92,7 +90,7 @@ const Menu = () => {
                                 return <option>{el}</option>
                             })}
                         </select>
-                        <NavLink key={1231}  onClick={handleMenu} exact to='/cart' className="settings__cart"><img src="/images/cart.png" className="cart__picture" /></NavLink>
+                        <NavLink key={1231}  onClick={handleMenu} exact to='/cart' className="settings__cart"><img src="/images/cart.png" alt='hhh' className="cart__picture" /></NavLink>
                         <div>{quantity}</div>
                     </div>
                 </div>

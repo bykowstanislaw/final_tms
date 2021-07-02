@@ -24,25 +24,26 @@ const Sauce =({currentUser})=>{
             console.error(e)
         } 
     }
-    const handleAddSauceToCart = async() =>{
-        try {
-            await firebase.firestore().collection('sauces').doc(sauceId).update({
-                inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
-            })
-        }
-        catch(e){
-            console.log(e)
-        }
-    }
+  
 
     useEffect(()=>{
+        const handleAddSauceToCart = async() =>{
+            try {
+                await firebase.firestore().collection('sauces').doc(sauceId).update({
+                    inCart:firebase.firestore.FieldValue.arrayUnion(`${currentUser}`)
+                })
+            }
+            catch(e){
+                console.log(e)
+            }
+        }
         handleAddSauceToCart()
-    },[sauceId])
+    },[sauceId,currentUser])
 
     return(<>
         <div className="sauce__list">
                {dataSauce.map((el,i)=>{
-                   return (<div className="list__element" ><img src={el.pic} width='290px' height='230px' alt="image not found"/>
+                   return (<div className="list__element" ><img src={el.pic} width='290px' height='230px' alt=" not found"/>
                    <div className="element__tittle" >{el.name}</div>
                    {/* <div className="element__structure" key={i}>{el.structure}</div> */}
                    
